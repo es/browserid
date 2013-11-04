@@ -28,6 +28,8 @@ const path                 = require('path'),
         '/authentication_api.js',
         '/ver.txt',
         '/humans.txt',
+        '/robots.txt',
+        '/sitemap.xml',
         // main site
         '/',
         '/signin',

@@ -1,0 +1,9 @@
+Sitemap: https://www.persona.org/sitemap.xml
+
+User-agent: *
+Disallow: /unsupported_dialog
+Disallow: /verify_email_address
+Disallow: /sign_in
+Disallow: /add_email_address
+Disallow: /reset_password
+Disallow: /humans.txt

@@ -10,7 +10,7 @@ const assert = require('assert'),
       vows = require('vows'),
       resources = require('../lib/static_resources');
 
-var suite = vows.describe('cache header tests');
+var suite = vows.describe('static resources tests');
 suite.options.error = false;
 
 var locales = ['ar', 'de', 'en_US', 'fr'];

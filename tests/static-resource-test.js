@@ -8,10 +8,43 @@ require('./lib/test_env.js');
 
 const assert = require('assert'),
       vows = require('vows'),
-      resources = require('../lib/static_resources');
+      resources = require('../lib/static_resources'),
+      wsapi = require('./lib/wsapi.js'),
+      start_stop = require('./lib/start-stop.js'),
+      config = require('../lib/configuration.js');
 
 var suite = vows.describe('static resources tests');
 suite.options.error = false;
+/*
+// start up a pristine server
+start_stop.addStartupBatches(suite);
+
+suite.addBatch({
+  "robots.txt different depending on deployment": {
+    topic: function () {
+    },
+    "login.persona.org deployment": {
+      topic: function () {
+        
+        this.callback(wsapi.get('/robots.txt'), fs.readFileSync(path.join(__dirname, "..", "resources", "static", "robots-persona.txt")).toString());
+      },
+      "sitemap.xml is present and allows indexing only /, /about, /privacy, & /tos": function (err, res) {
+        assert.equal(res.body, strictRobots);
+      }
+    },
+    "all other deployments": {
+      topic: function () {
+        this.callback(wsapi.get('/robots.txt'), fs.readFileSync(path.join(__dirname, "..", "resources", "static", "robots-anosrep.txt")).toString());
+      },
+      "disallows all indexing": function (err, res, strictRobots) {
+        assert.equal(res.body, strictRobots);
+      }
+    }
+  }
+});
+
+// shut the server down and cleanup
+start_stop.addShutdownBatches(suite);*/
 
 var locales = ['ar', 'de', 'en_US', 'fr'];
 suite.addBatch({
